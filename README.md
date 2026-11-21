@@ -59,6 +59,8 @@ Settings: click the logo at the top left, then **MacBar Settings…**.
   Running apps get a dot.
 - Hover magnification, a bounce when an app launches, and drag to reorder.
   - Drag apps in from the app grid to pin them.
+- A window asking for attention (such as a password prompt that opened behind others) gets a dock icon
+  that bounces; click it to bring the window forward.
 - Click to launch, focus, minimize or cycle through an app's windows. Middle-click opens a new window.
 - Right-click for:
   - the app's window list

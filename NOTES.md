@@ -43,6 +43,17 @@ other apps' windows.
 - `WM_SETTINGCHANGE`-style problems from the Windows version (FancyZones) don't apply: GNOME owns the
   work area.
 
+## 1.0.1: admin/password prompts
+- The dock left out every `skip_taskbar` window, which includes an app's own dialogs (password prompts
+  among them). Windows that demand attention or are urgent are now listed, sorted first, opened by a click,
+  and make the dock bounce their app (`window-demands-attention`, `window-marked-urgent`).
+- The full-screen peek raised `panelBox` to the top of `uiGroup` and never put it back, so after one peek
+  the menu bar sat above GNOME's dialogs (the polkit password prompt) and the lock screen. It now goes just
+  below `modalDialogGroup` during the peek and back to its old place after.
+- 30/30 checks on 24.04, 25.04 and 25.10 (new: attention app in dock, dock click focuses it, peek stays
+  below dialogs, peek restores stacking). Mutter ignores `set_demands_attention()` for a window that isn't
+  covered, so the test puts the window behind another first.
+
 ## Test results (1.0.0)
 26/26 checks on Ubuntu 24.04 (GNOME 46.2), 25.04 (48.1) and 25.10 (49.0). The checks:
 - dock and menus
